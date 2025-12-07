@@ -1,29 +1,39 @@
-# IoT Real-Time Data Pipeline (Kafka + Cassandra + Elasticsearch + Kibana)
+# 🌐 Big Data Real-Time Pipeline  
+### Kafka • Python • Cassandra • Elasticsearch • Kibana
 
-This project is a mini big data pipeline built with:
+Ce projet met en place une architecture Big Data traitant des données de capteurs IoT en temps réel.  
+Il illustre un pipeline complet allant de la production d’événements jusqu’à la visualisation dynamique dans Kibana.
 
-- **Python** (producer & consumer)
-- **Kafka** (streaming)
-- **Elasticsearch + Kibana** (storage & visualization)
-- **Docker Compose** (orchestration)
+---
 
-## Architecture
+## 🚀 **Architecture du projet**
 
-1. A Python **producer** simulates IoT sensor events and sends them to a Kafka topic `iot-sensor`.
-2. A Python **consumer** reads events from Kafka and indexes them into Elasticsearch.
-3. Kibana is used to build real-time dashboards on top of the `iot-data` index.
+Le pipeline se compose de :
 
-## How to run
+1. **Kafka** – Réception et diffusion des événements IoT  
+2. **Python Producer** – Génération de données de capteurs (IoT)  
+3. **Python Consumer**  
+   - Stockage dans **Cassandra**  
+   - Indexation dans **Elasticsearch**
+4. **Cassandra** – Base de données NoSQL optimisée pour l’écriture rapide  
+5. **Elasticsearch** – Moteur d’analyse temps réel  
+6. **Kibana** – Tableau de bord et visualisation en direct des données
 
-```bash
-# 1. Start all services
-docker compose up -d
+---
 
-# 2. Install Python dependencies
-pip install -r requirements.txt
+## 📦 **Technologies utilisées**
 
-# 3. Start the producer (Kafka)
-python producer.py
+| Technologie       | Rôle |
+|------------------|------|
+| **Docker & Docker Compose** | Orchestration des services |
+| **Kafka** | Broker de messages |
+| **Cassandra** | Stockage NoSQL distribué |
+| **Python** | Producer & Consumer |
+| **Elasticsearch 8.x** | Indexation & recherche |
+| **Kibana** | Dashboards en temps réel |
 
-# 4. Start the consumer (Elasticsearch)
-python consumer_elastic.py
+---
+
+## 🗂 **Structure du projet**
+
+
